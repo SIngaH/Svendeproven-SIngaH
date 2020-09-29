@@ -1,18 +1,23 @@
 #nav {
   display: flex;
-  justify-content: space-between;
-  #drop-down {
-    display: none;
-  }
-  #nav-logo {
-    height: 35px;
-  }
-  h4 {
-    font-size: 20px;
+  justify-content: space-evenly;
+  padding-top: 2%;
+  .img-h4 {
+    width: 50%;
+    display: flex;
+    #nav-logo {
+      height: 35px;
+    }
+    h4 {
+      padding: 1% 0 0 2%;
+      font-size: 20px;
+    }
   }
   ul {
     display: flex;
     justify-content: space-around;
+    padding-top: 1%;
+    width: 26%;
     li {
       list-style: none;
       a {
@@ -21,5 +26,8 @@
         font-weight: bold;
       }
     }
+  }
+  #drop-down {
+    display: none;
   }
 }
