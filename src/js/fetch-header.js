@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json()
     })
     .then(function (result) {
-      console.log(result.asset.url)
       document.querySelector('#header-kittens').src = result.asset.url
     })
 })
