@@ -4,7 +4,8 @@
   box-sizing: border-box;
 }
 #wrapper {
-  max-width: 960px;
+  //jeg sætter max-width til 1536px fordi det er størrelsen på min skærm(jeg kan ikke se hvordan det er på større skærme)
+  max-width: 1536px;
   margin: 0 auto;
   font-family: 'Roboto', sans-serif;
 }
