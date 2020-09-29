@@ -3,14 +3,14 @@
   background-color: var(--light-blue);
   h2 {
     color: var(--text-blue);
-    padding-top: 2%;
+    padding: 2% 0;
   }
   .bliv-frivillig-sectioner {
     display: grid;
     grid-template-columns: repeat(3, 30%);
     column-gap: 3%;
     section {
-      margin: 10% 0;
+      margin: 2% 0;
       background-color: #fff;
       height: 90%;
       h3 {
@@ -23,7 +23,15 @@
         padding: 2%;
       }
       p {
-        padding: 0 2%;
+        padding: 0 2% 30% 2%;
+      }
+      .extra {
+        color: #000;
+        background-color: var(--off-white);
+        font-style: italic;
+        font-size: 14px;
+        padding: 2%;
+        border-top: solid 1px var(--grey);
       }
     }
   }
