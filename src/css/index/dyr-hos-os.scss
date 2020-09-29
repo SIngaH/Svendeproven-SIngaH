@@ -2,7 +2,8 @@
   padding: 2% 10%;
   display: grid;
   grid-template-columns: repeat(2, 45%);
-  gap: 10%;
+  grid-template-rows: 10% auto;
+  gap: 5%;
   .dyr-hos-os__text {
     grid-row: 1;
     grid-column: 1 / span 2;
@@ -11,19 +12,22 @@
       padding-bottom: 2%;
     }
   }
-  #et-dyr {
+  #et-dyr a {
     display: grid;
-    grid-template-columns: 20% 80%;
-    grid-template-rows: 10% 20% 10% 5% 10%;
-    row-gap: 5%;
+    grid-template-columns: 40% 59%;
+    column-gap: 1%;
     overflow: hidden;
+    text-decoration: none;
+    color: #000;
+    border: solid 1px var(--grey);
     .dyr-hos-os-img {
-      height: 100%;
+      width: 100%;
+      height: auto;
       grid-column: 1;
-      grid-row: 1 / span 3;
     }
     p {
       font-size: 10px;
+      padding: 3% 0;
     }
     .et-dyr__grey {
       color: var(--grey);
