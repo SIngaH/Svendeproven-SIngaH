@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelector('#dyr-hos-os').innerHTML +=
           `
             <section id="et-dyr">
-            <a href="` +
+            <a href="et-dyr.html?id=` +
           dyr.id +
           `">
                 <img
