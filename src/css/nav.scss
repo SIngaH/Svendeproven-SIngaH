@@ -1,0 +1,25 @@
+#nav {
+  display: flex;
+  justify-content: space-between;
+  #drop-down {
+    display: none;
+  }
+  #nav-logo {
+    height: 35px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  ul {
+    display: flex;
+    justify-content: space-around;
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: var(--grey);
+        font-weight: bold;
+      }
+    }
+  }
+}
