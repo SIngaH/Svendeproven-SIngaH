@@ -1,0 +1,20 @@
+.section1 {
+  display: flex;
+  justify-content: space-around;
+  margin: 0 10% 2% 10%;
+  h2 {
+    color: var(--text-blue);
+    padding-bottom: 2%;
+  }
+  p {
+    font-size: 15px;
+    padding-right: 7%;
+  }
+  .section1__second-p {
+    padding-top: 2%;
+    padding-right: 7%;
+  }
+  .section1__mad-og-forbrug p {
+    padding-right: 0;
+  }
+}
