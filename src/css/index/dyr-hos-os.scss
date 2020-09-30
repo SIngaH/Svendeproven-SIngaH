@@ -43,23 +43,23 @@
 }
 @media only screen and (max-width: 1496px) {
   #dyr-hos-os {
-    padding: 2% 5% 15% 5%;
+    padding: 2% 5% 0 5%;
   }
 }
 @media only screen and (max-width: 1161px) {
   #dyr-hos-os {
-    padding: 2% 4% 18% 4%;
+    padding: 2% 4% 0 4%;
   }
 }
 
 @media only screen and (max-width: 1065px) {
   #dyr-hos-os {
-    padding: 2% 3% 20% 3%;
+    padding: 2% 3% 0 3%;
   }
 }
 @media only screen and (max-width: 873px) {
   #dyr-hos-os {
-    padding: 2% 2% 20% 2%;
+    padding: 2% 2% 0 2%;
     gap: 2%;
   }
 }
@@ -68,7 +68,7 @@
     display: flex;
     justify-content: space-between;
     flex-direction: column;
-    padding: 2% 2% 0% 2%;
+    padding: 2% 2% 0 2%;
     #et-dyr {
       margin-bottom: 3%;
     }
