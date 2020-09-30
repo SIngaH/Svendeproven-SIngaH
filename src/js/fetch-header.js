@@ -11,6 +11,30 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json()
     })
     .then(function (result) {
-      document.querySelector('#header-kittens').src = result.asset.url
+      document.querySelector('#header').innerHTML =
+        `
+        <h1>` +
+        result.title +
+        `</h1>
+        <p>` +
+        result.content +
+        `</p>
+        <img
+          src="` +
+        result.asset.url +
+        `"
+          alt="kittens"
+          id="header-kittens"
+        />
+      `
     })
 })
+/*
+  <h1>Foreningen for Dyrevelfærd</h1>
+  <p>Vi specialisere os i dyrevelfærd</p>
+  <img
+    src="` + result.asset.url + `"
+    alt="kittens"
+    id="header-kittens"
+  />
+*/
