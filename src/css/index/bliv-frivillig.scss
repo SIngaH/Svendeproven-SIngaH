@@ -17,6 +17,10 @@
         padding: 2%;
         background-color: var(--off-white);
         border-bottom: solid 1px var(--grey);
+        a {
+          text-decoration: none;
+          color: #000;
+        }
       }
       img {
         width: 100%;
@@ -34,5 +38,47 @@
         border-top: solid 1px var(--grey);
       }
     }
+  }
+}
+@media only screen and (max-width: 1144px) {
+  #bliv-frivillig {
+    padding: 0 5% 2% 5%;
+  }
+}
+@media only screen and (max-width: 916px) {
+  #bliv-frivillig {
+    padding: 0 2% 2% 2%;
+  }
+}
+@media only screen and (max-width: 866px) {
+  #bliv-frivillig .bliv-frivillig-sectioner section p,
+  #bliv-frivillig .bliv-frivillig-sectioner section .extra {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 643px) {
+  #bliv-frivillig .bliv-frivillig-sectioner {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(3, 30%);
+    row-gap: 3%;
+  }
+  #bliv-frivillig .bliv-frivillig-sectioner section p {
+    padding: 0 2% 3% 2%;
+    background-color: #fff;
+  }
+  #bliv-frivillig .bliv-frivillig-sectioner section .extra {
+    margin-bottom: 8%;
+  }
+}
+@media only screen and (max-width: 613px) {
+  #bliv-frivillig .bliv-frivillig-sectioner section .extra {
+    margin-bottom: 10%;
+  }
+}
+
+@media only screen and (max-width: 334px) {
+  #bliv-frivillig .bliv-frivillig-sectioner section .extra {
+    margin-bottom: 13%;
   }
 }
