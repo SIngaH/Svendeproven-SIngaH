@@ -1,7 +1,7 @@
 .section1 {
-  display: flex;
-  justify-content: space-around;
+  display: grid;
   margin: 0 10% 2% 10%;
+  grid-template-columns: repeat(3, 33%);
   h2 {
     color: var(--text-blue);
     padding-bottom: 2%;
