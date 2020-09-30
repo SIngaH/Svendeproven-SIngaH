@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p>` +
         result.content +
         `</p>
-        <img
+        <img itemprop="image"
           src="` +
         result.asset.url +
         `"

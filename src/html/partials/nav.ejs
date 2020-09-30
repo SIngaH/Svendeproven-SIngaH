@@ -1,14 +1,45 @@
 <nav id="nav">
-  <div class="img-h4">
-    <img src="./assets/images/logo.png" alt="logo" id="nav-logo" />
-    <h4>Foreningen for Dyrevelfærd</h4>
+  <div
+    itemscope
+    itemtype="http://schema.org/LocalBusiness"
+    itemref="_telephone3 _address4 _url7"
+    class="img-h4"
+  >
+    <img
+      itemprop="image"
+      src="./assets/images/logo.png"
+      alt="logo"
+      id="nav-logo"
+    />
+    <h4 id="_name1" itemprop="name">Foreningen for Dyrevelfærd</h4>
   </div>
-  <i class="fas fa-caret-down" id="drop-down"></i>
+  <i class="fas fa-caret-down" id="drop-down" aria-hidden="true"></i>
   <ul>
-    <li id="hjem"><a href="index.html">Hjem</a></li>
-    <li id="om-os"><a href="index.html">Om os</a></li>
-    <li id="frivillig"><a href="index.html">Bliv Frivillig</a></li>
-    <li id="dyr-i-nød"><a href="index.html">Dyr i nød?</a></li>
-    <li id="adopter"><a href="index.html">Adopter et dyr</a></li>
+    <li id="hjem"><a id="_url7" itemprop="url" href="index.html">Hjem</a></li>
+    <li id="om-os"><a id="_url9" itemprop="url" href="#section1">Om os</a></li>
+    <li
+      itemscope
+      itemtype="http://schema.org/LocalBusiness"
+      itemref="_name1 nav-logo _telephone3 _address4"
+      id="frivillig"
+    >
+      <a itemprop="url" href="#bliv-frivillig">Bliv Frivillig</a>
+    </li>
+    <li
+      itemscope
+      itemtype="http://schema.org/LocalBusiness"
+      itemref="_name1 nav-logo _telephone3 _address4"
+      id="dyr-i-nød"
+    >
+      <a itemprop="url" href="#dyr-i-nod">Dyr i nød?</a>
+    </li>
+    <li
+      itemscope
+      itemtype="http://schema.org/LocalBusiness"
+      itemref="_name1 nav-logo _telephone3 _address4"
+      id="adopter"
+    >
+      <a itemprop="url" href="#adopter-et-dyr">Adopter et dyr</a>
+    </li>
   </ul>
 </nav>

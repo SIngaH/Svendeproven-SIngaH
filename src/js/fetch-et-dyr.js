@@ -1,6 +1,3 @@
-/*
-http://localhost:4000/api/v1/animals
-*/
 document.addEventListener('DOMContentLoaded', () => {
   let params = new URLSearchParams(document.location.search)
   let id = params.get('id')
@@ -22,7 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <h3>` +
         result.name +
         `</h3>
-            <img src="` +
+            <img itemprop="image" src="` +
         result.asset.url +
         `" alt="` +
         result.name +

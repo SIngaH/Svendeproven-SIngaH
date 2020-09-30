@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(function (result) {
       document.querySelector('#dyr-i-nod').innerHTML =
         `
-        <img src="` +
+        <img itemprop="image" src="` +
         result.asset.url +
         `" alt="dyr i nød" id="dyr-i-nod-img" />
         <h4>` +

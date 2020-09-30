@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(function (result) {
       document.querySelector('#adopter-et-dyr').innerHTML =
         `
-        <img
+        <img itemprop="image"
         src="` +
         result.asset.url +
         `"

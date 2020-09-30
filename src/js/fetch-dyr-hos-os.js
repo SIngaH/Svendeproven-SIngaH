@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="et-dyr.html?id=` +
           dyr.id +
           `">
-                <img
+                <img itemprop="image"
                 src="` +
           dyr.asset.url +
           `"
