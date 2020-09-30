@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json()
     })
     .then(function (result) {
-      console.log(result)
       result.forEach((res, index) => {
         document.querySelector('.bliv-frivillig-sectioner').innerHTML +=
           `
@@ -22,7 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <img src="` +
           res.asset.url +
           `" alt="volunteer" />
-            <p>` +
+            <p class="content">` +
           res.content +
           `</p>
             <p class="extra">` +
@@ -34,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (res.extra == null || res.extra == undefined || res.extra == '') {
           extraElement[index].style.display = 'none'
         }
+        //use .content to add padding on the ones whitout extra
       })
     })
 })
