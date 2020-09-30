@@ -1,0 +1,25 @@
+article {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 10% 90%;
+  background-color: var(--light-blue);
+  border: solid 2px #000;
+  margin: 2% 18% 5% 18%;
+  img {
+    height: 100%;
+    grid-column: 1;
+    grid-row: 1 / span 2;
+  }
+  h3 {
+    padding-top: 2%;
+  }
+  .et-dyr-text {
+    padding: 3% 21% 5% 0;
+    p {
+      padding-top: 2%;
+    }
+  }
+}
+#nav ul #adopter a {
+  color: #000;
+}
