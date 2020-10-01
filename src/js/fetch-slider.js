@@ -12,7 +12,6 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(function (result) {
       result.forEach((res) => {
-        console.log(res)
         document.querySelector('#slider').innerHTML +=
           `
             <img itemprop="image" src="` +
