@@ -1,0 +1,21 @@
+#slider {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  overflow-y: hidden;
+  height: 595px;
+  --n: 1;
+  width: calc(var(--n) * 100%);
+  transform: translate(calc(var(--i, 0) / var(--n) * -100% + var(--tx, 0px)));
+  transition: transform 0.5s ease-out;
+  margin-top: 5%;
+  img {
+    min-width: 100%;
+    width: 100%;
+    width: calc(100% / var(--n));
+    pointer-events: none;
+  }
+}
+.smooth {
+  transition: transform calc(var(--f, 1) * 0.5s) ease-out;
+}
