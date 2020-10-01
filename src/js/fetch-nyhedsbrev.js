@@ -40,7 +40,6 @@ form.addEventListener('submit', (e) => {
   }
   post(email.value, name.value)
   errorElement.style.display = 'block'
-  errorElement.innerHTML = 'Du er nu tilmeldt til vores nyhedsbrev'
   return false
 })
 
@@ -60,10 +59,14 @@ function post(theEmail, theName) {
     .then((response) => response.json())
     .then((data) => {
       console.log('Success:', data)
+
+      errorElement.innerHTML = 'Du er nu tilmeldt til vores nyhedsbrev'
       changeUrl()
     })
     .catch((error) => {
       console.error('Error:', error)
+
+      errorElement.innerHTML = 'Du er allerede tilmeldt til vores nyhedsbrev'
     })
 }
 function changeUrl() {
