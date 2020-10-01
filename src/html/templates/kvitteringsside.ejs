@@ -9,14 +9,23 @@
         
         <main>
             <h1>Tak for at tilmelde dig til vores nyhedsbrev!</h1>
-            <a href="index.html">
-                <i class="fas fa-arrow-left"></i>
-                <p>Back to start</p>
-            </a>
+            <h2>For at afmelde nyhedsbrevet</h2>
+            <form method="GET" class="form" novalidate>
+                <input name="name" class="form_input form__name" placeholder="Navn" />
+                <input
+                type="email"
+                name="email"
+                class="form_input form__email"
+                placeholder="Email"
+                />
+                
+                <input type="submit" value="Afmeld" class="form__submit" />
+                <div class="error-message"></div>
+              </form>
         </main>
 
         <%- include('../partials/footer') %>
 
     </div>
-
+    <script src="./assets/js/fetch-kvitteringsside.js"></script>
 <%- include('../partials/last') %>
