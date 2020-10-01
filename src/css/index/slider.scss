@@ -8,7 +8,7 @@
   width: calc(var(--n) * 100%);
   transform: translate(calc(var(--i, 0) / var(--n) * -100% + var(--tx, 0px)));
   transition: transform 0.5s ease-out;
-  margin-top: 5%;
+  margin-top: 12%;
   img {
     min-width: 100%;
     width: 100%;
@@ -18,4 +18,19 @@
 }
 .smooth {
   transition: transform calc(var(--f, 1) * 0.5s) ease-out;
+}
+@media only screen and (max-width: 946px) {
+  #slider {
+    margin-top: 15%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #slider {
+    margin-top: 12%;
+  }
+}
+@media only screen and (max-width: 793px) {
+  #slider {
+    margin-top: 3%;
+  }
 }
