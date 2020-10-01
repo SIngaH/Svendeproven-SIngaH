@@ -60,8 +60,13 @@ function post(theEmail, theName) {
     .then((response) => response.json())
     .then((data) => {
       console.log('Success:', data)
+      changeUrl()
     })
     .catch((error) => {
       console.error('Error:', error)
     })
+}
+function changeUrl() {
+  console.log(window.location.href)
+  window.location.href = '/kvitteringsside.html'
 }

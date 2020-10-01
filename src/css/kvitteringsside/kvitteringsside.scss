@@ -1,0 +1,22 @@
+main {
+  h1 {
+    text-align: center;
+    padding: 5% 0;
+    font-size: 46px;
+    text-decoration: underline;
+  }
+  a {
+    color: #000;
+    font-weight: bold;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    p {
+      padding-left: 1%;
+      font-size: 20px;
+    }
+    i {
+      padding-top: 0.4%;
+    }
+  }
+}
