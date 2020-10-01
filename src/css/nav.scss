@@ -38,10 +38,13 @@
   #nav ul {
     width: 34%;
   }
+  #nav .img-h4 {
+    width: 40%;
+  }
 }
 @media only screen and (max-width: 1087px) {
   #nav ul {
-    width: 39%;
+    width: 38%;
   }
 }
 @media only screen and (max-width: 941px) {
@@ -60,22 +63,20 @@
   }
 }
 @media only screen and (max-width: 692px) {
-  #nav ul {
-    width: 14%;
-  }
-  #nav .img-h4 h4 {
-    font-size: 18px;
-    padding: 2% 0 0 2%;
+  #nav {
+    justify-content: space-evenly;
+    ul {
+      width: 14%;
+      display: none;
+    }
+    .img-h4 h4 {
+      font-size: 18px;
+      padding: 2% 0 0 2%;
+    }
   }
   #drop-down {
     display: block;
     transform: rotate(-90deg);
-  }
-  #nav ul {
-    display: none;
-  }
-  #nav {
-    justify-content: space-between;
   }
 }
 @media only screen and (max-width: 500px) {
