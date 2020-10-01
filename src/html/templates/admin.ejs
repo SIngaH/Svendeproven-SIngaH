@@ -1,0 +1,26 @@
+<%- include('../partials/head') %>
+    <link rel="stylesheet" href="./assets/css/admin/admin.css">
+    <title>Foreningen for Dyrevelfærd</title>
+</head>
+<body>
+    <div id="wrapper">
+
+        <%- include('../partials/nav') %>
+        <section id="log-in">
+            <h1>Admin log in</h1>
+            <form method="GET" class="form" novalidate>
+                <input name="name" class="form_input form__name" placeholder="Brugernavn">
+
+                <input type="password" name="password" class="form_input form_password" placeholder="Adgangskode">
+
+                <div class="error-message"></div>
+
+                <button>Log in</button>
+            </form>
+        </section>
+
+        <%- include('../partials/footer') %>
+
+    </div>
+    <script src="./assets/js/admin.js"></script>
+<%- include('../partials/last') %>

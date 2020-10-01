@@ -1,0 +1,29 @@
+#log-in {
+  background-color: var(--light-blue);
+  border: solid 2px #000;
+  margin: 0 30%;
+  padding: 5% 10%;
+  text-align: center;
+  h1 {
+    padding-bottom: 5%;
+  }
+  .form {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    input {
+      padding: 0 1%;
+      margin-bottom: 3%;
+    }
+    button {
+      color: #fff;
+      background-color: var(--button-blue);
+      border: none;
+      border-radius: 4px;
+      padding: 2% 0;
+    }
+    .error-message {
+      padding-bottom: 3%;
+    }
+  }
+}
