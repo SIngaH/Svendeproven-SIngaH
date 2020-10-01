@@ -11,14 +11,29 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json()
     })
     .then(function (result) {
+      let insertHere = document.querySelector('.bliv-frivillig-sectioner')
+      let theLength = result.length
+      let procent = 100 / theLength
+
+      if (screen.width > 643) {
+        insertHere.style.gridTemplateColumns =
+          `repeat(` + theLength + `, ` + procent + `%)`
+      } else {
+        insertHere.style.gridTemplateRows =
+          `repeat(` + theLength + `, ` + procent + `%)`
+        insertHere.style.gridTemplateColumns = '100%'
+      }
       result.forEach((res, index) => {
-        document.querySelector('.bliv-frivillig-sectioner').innerHTML +=
+        let i = index + 1
+        insertHere.innerHTML +=
           `
           <section>
-            <h3>` +
+            <h3><a href="frivillig.html?number=` +
+          i +
+          `">` +
           res.title +
-          `</h3>
-            <img src="` +
+          `</a></h3>
+            <img itemprop="image" src="` +
           res.asset.url +
           `" alt="volunteer" />
             <p class="content">` +
