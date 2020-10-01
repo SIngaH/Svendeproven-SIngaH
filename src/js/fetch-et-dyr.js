@@ -40,4 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         </article>
         `
     })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
 })

@@ -38,6 +38,7 @@ form.addEventListener('submit', (e) => {
   } else {
     email.style.border = borderGone
   }
+
   post(email.value, name.value)
   errorElement.style.display = 'block'
   return false
@@ -65,7 +66,7 @@ function post(theEmail, theName) {
     })
     .catch((error) => {
       console.error('Error:', error)
-
+      //jeg får nogle gange error hvis jeg tilføjer noget to gange
       errorElement.innerHTML = 'Du er allerede tilmeldt til vores nyhedsbrev'
     })
 }

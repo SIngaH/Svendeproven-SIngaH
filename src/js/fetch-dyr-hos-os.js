@@ -44,4 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
             </section>`
       })
     })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
 })

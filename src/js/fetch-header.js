@@ -28,13 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
         />
       `
     })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
 })
-/*
-  <h1>Foreningen for Dyrevelfærd</h1>
-  <p>Vi specialisere os i dyrevelfærd</p>
-  <img
-    src="` + result.asset.url + `"
-    alt="kittens"
-    id="header-kittens"
-  />
-*/

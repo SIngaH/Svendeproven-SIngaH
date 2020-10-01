@@ -30,4 +30,7 @@ document.addEventListener('DOMContentLoaded', () => {
         `</p>
         `
     })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
 })
