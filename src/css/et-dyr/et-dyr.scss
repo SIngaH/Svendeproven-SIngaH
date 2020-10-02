@@ -7,14 +7,15 @@ article {
   margin: 2% 18% 5% 18%;
   img {
     height: 100%;
+    width: auto;
     grid-column: 1;
     grid-row: 1 / span 2;
   }
   h3 {
-    padding-top: 2%;
+    padding: 2% 0 0 5%;
   }
   .et-dyr-text {
-    padding: 3% 21% 5% 0;
+    padding: 3% 5% 5% 5%;
     p {
       padding-top: 2%;
     }
@@ -22,4 +23,139 @@ article {
 }
 #nav ul #adopter a {
   color: #000;
+}
+@media only screen and (max-width: 1297px) {
+  article {
+    h3 {
+      padding: 2% 0 0 14%;
+    }
+    .et-dyr-text {
+      padding: 3% 5% 5% 14%;
+    }
+  }
+}
+@media only screen and (max-width: 1251px) {
+  article {
+    h3 {
+      padding: 2% 0 0 19%;
+    }
+    .et-dyr-text {
+      padding: 3% 5% 5% 19%;
+    }
+  }
+}
+@media only screen and (max-width: 1249px) {
+  article {
+    margin: 2% 15% 5% 15%;
+  }
+}
+@media only screen and (max-width: 1141px) {
+  article {
+    margin: 2% 13% 5% 13%;
+  }
+}
+@media only screen and (max-width: 1080px) {
+  article {
+    margin: 2% 11% 5% 11%;
+  }
+}
+@media only screen and (max-width: 1025px) {
+  article {
+    margin: 2% 9% 5% 9%;
+  }
+}
+@media only screen and (max-width: 974px) {
+  article {
+    margin: 2% 7% 5% 7%;
+  }
+}
+@media only screen and (max-width: 929px) {
+  article {
+    margin: 2% 5% 5% 5%;
+  }
+}
+@media only screen and (max-width: 888px) {
+  article {
+    margin: 2% 3% 5% 3%;
+  }
+}
+@media only screen and (max-width: 850px) {
+  article {
+    margin: 2% 2% 5% 2%;
+  }
+}
+@media only screen and (max-width: 832px) {
+  article p {
+    font-size: 15px;
+  }
+}
+@media only screen and (max-width: 780px) {
+  article p {
+    font-size: 14px;
+  }
+}
+@media only screen and (max-width: 728px) {
+  article p {
+    font-size: 13px;
+  }
+}
+@media only screen and (max-width: 1251px) {
+  article {
+    h3 {
+      padding: 2% 0 0 24%;
+    }
+    .et-dyr-text {
+      padding: 3% 5% 5% 24%;
+    }
+  }
+}
+@media only screen and (max-width: 671px) {
+  article {
+    h3 {
+      padding: 2% 0 0 32%;
+    }
+    .et-dyr-text {
+      padding: 3% 5% 5% 32%;
+    }
+  }
+}
+@media only screen and (max-width: 669px) {
+  article {
+    h3 {
+      padding: 2% 0 0 10%;
+    }
+    .et-dyr-text {
+      padding: 3% 5% 0 10%;
+    }
+  }
+}
+@media only screen and (max-width: 642px) {
+  article {
+    h3 {
+      padding: 2% 0 0 12%;
+    }
+    .et-dyr-text {
+      padding: 3% 1% 0 12%;
+    }
+  }
+}
+@media only screen and (max-width: 631px) {
+  article {
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+    h3 {
+      grid-row: 1;
+      text-align: center;
+      padding: 2% 0;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      grid-row: 2;
+    }
+    .et-dyr-text {
+      grid-row: 3;
+      padding: 3% 5%;
+    }
+  }
 }

@@ -23,14 +23,14 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       main.innerHTML =
         `<article>
-            <h3>` +
-        result.name +
-        `</h3>
-            <img itemprop="image" src="` +
+        <img itemprop="image" src="` +
         result.asset.url +
         `" alt="` +
         result.name +
         `">
+        <h3>` +
+        result.name +
+        `</h3>
         <div class="et-dyr-text">
                 <p>Været på internatet i ` +
         days_passed(d) +
