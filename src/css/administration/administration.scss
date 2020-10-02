@@ -1,3 +1,19 @@
 h1 {
   text-align: center;
 }
+main {
+  display: flex;
+  justify-content: space-around;
+  h2 {
+    padding-bottom: 3%;
+  }
+  ul li {
+    cursor: pointer;
+    list-style: none;
+    padding-left: 3%;
+  }
+  #post,
+  #delete {
+    margin: 3% 0 2% 0;
+  }
+}
