@@ -11,7 +11,6 @@ document.addEventListener('DOMContentLoaded', () => {
   let postVolunteersH3 = document.querySelector('#postForm .form-volunteers h3')
   let postAnimals = document.querySelector('#postForm .form-animals')
   let postAnimalsH3 = document.querySelector('#postForm .form-animals h3')
-
   let endpoints = [
     'http://localhost:4000/api/v1/adoptsections',
     'http://localhost:4000/api/v1/abouts',
@@ -130,9 +129,13 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     errorElement.style.display = 'block'
-    errorElement.innerHTML = 'Du har nu tilføjet til Adopt sektionerne'
 
-    console.log(currentIndex)
+    if (postTitleContentH3.innerText.includes('Adopt')) {
+      errorElement.innerHTML = 'Du har nu tilføjet til Adopt sektionerne'
+    } else if (postTitleContentH3.innerText.includes('Abouts')) {
+      errorElement.innerHTML = 'Du har nu tilføjet til Abouts sektionerne'
+    }
+
     let theIndex = currentIndex++
     let data = {
       title: overskrift.value,
@@ -174,7 +177,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     VerrorElement.style.display = 'block'
-    VerrorElement.innerHTML = 'Du har nu tilføjet til Adopt sektionerne'
+    VerrorElement.innerHTML = 'Du har nu tilføjet til Volunteers sektionerne'
 
     let theIndex = currentIndex++
     let data = {
@@ -240,7 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     AerrorElement.style.display = 'block'
-    AerrorElement.innerHTML = 'Du har nu tilføjet til Adopt sektionerne'
+    AerrorElement.innerHTML = 'Du har nu tilføjet til Animals sektionerne'
 
     let theIndex = currentIndex++
     let data = {
