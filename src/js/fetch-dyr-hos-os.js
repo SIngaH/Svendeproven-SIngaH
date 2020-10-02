@@ -14,6 +14,14 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.hvor-mange-dyr').innerHTML =
         result.length + ' dyr'
       result.forEach((dyr) => {
+        let d = new Date(dyr.createdAt)
+        function days_passed(dt) {
+          let current = new Date()
+          let previous = new Date(dt.getTime())
+
+          return Math.ceil((current - previous + 1) / 86400000)
+        }
+
         document.querySelector('#dyr-hos-os').innerHTML +=
           `
             <section id="et-dyr">
@@ -36,9 +44,9 @@ document.addEventListener('DOMContentLoaded', () => {
                     <p>` +
           dyr.description +
           `</p>
-                    <p class="et-dyr__grey">` +
-          dyr.createdAt +
-          `</p>
+                    <p class="et-dyr__grey">Været på internatet i ` +
+          days_passed(d) +
+          ` dage</p>
                 </div>
             </a>
             </section>`
