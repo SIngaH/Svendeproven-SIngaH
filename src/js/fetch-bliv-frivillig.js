@@ -51,4 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
         //use .content to add padding on the ones whitout extra
       })
     })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
 })
