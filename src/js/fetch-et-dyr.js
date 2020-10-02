@@ -14,6 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
       return response.json()
     })
     .then(function (result) {
+      let d = new Date(result.createdAt)
+      function days_passed(dt) {
+        let current = new Date()
+        let previous = new Date(dt.getTime())
+
+        return Math.ceil((current - previous + 1) / 86400000)
+      }
       main.innerHTML =
         `<article>
             <h3>` +
@@ -25,9 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
         result.name +
         `">
         <div class="et-dyr-text">
-                <p>` +
-        result.asset.createdAt +
-        ` change later</p>
+                <p>Været på internatet i ` +
+        days_passed(d) +
+        ` dage</p>
                 <p>` +
         result.name +
         ` is ` +
