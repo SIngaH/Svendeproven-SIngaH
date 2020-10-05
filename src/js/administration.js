@@ -263,15 +263,11 @@ document.addEventListener('DOMContentLoaded', () => {
     DelerrorElement.style.display = 'block'
 
     sessionStorage.setItem('saveNumber', number.value)
-    console.log(saveNumber)
     deleter(saveUrl, number.value)
     return false
   })
   /* ------------------- fetch post og delete ------------------------- */
   function post(url, fetchData) {
-    console.log(url)
-    console.log(fetchData)
-
     fetch(url, {
       method: 'POST',
       headers: {
