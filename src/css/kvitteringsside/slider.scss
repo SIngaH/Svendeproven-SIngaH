@@ -20,3 +20,78 @@
 .smooth {
   transition: transform calc(var(--f, 1) * 0.5s) ease-out;
 }
+@media only screen and (max-width: 1349px) {
+  #slider {
+    height: 588px;
+  }
+}
+@media only screen and (max-width: 1221px) {
+  #slider {
+    height: 563px;
+  }
+}
+@media only screen and (max-width: 1141px) {
+  #slider {
+    height: 530px;
+  }
+}
+@media only screen and (max-width: 1065px) {
+  #slider {
+    height: 498px;
+  }
+}
+@media only screen and (max-width: 1010px) {
+  #slider {
+    height: 453px;
+  }
+}
+@media only screen and (max-width: 941px) {
+  #slider {
+    height: 407px;
+  }
+}
+@media only screen and (max-width: 859px) {
+  #slider {
+    height: 379px;
+  }
+}
+@media only screen and (max-width: 797px) {
+  #slider {
+    height: 346px;
+  }
+}
+@media only screen and (max-width: 727px) {
+  #slider {
+    height: 316px;
+  }
+}
+@media only screen and (max-width: 659px) {
+  #slider {
+    height: 291px;
+  }
+}
+@media only screen and (max-width: 583px) {
+  #slider {
+    height: 268px;
+  }
+}
+@media only screen and (max-width: 531px) {
+  #slider {
+    height: 234px;
+  }
+}
+@media only screen and (max-width: 470px) {
+  #slider {
+    height: 205px;
+  }
+}
+@media only screen and (max-width: 406px) {
+  #slider {
+    height: 180px;
+  }
+}
+@media only screen and (max-width: 368px) {
+  #slider {
+    height: 163px;
+  }
+}
