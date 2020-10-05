@@ -24,9 +24,9 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   let myToken = sessionStorage.getItem('theToken')
+  let saveUrl = sessionStorage.getItem('saveUrl')
   let postLI = document.querySelectorAll('.postLi')
   let deleteLI = document.querySelectorAll('.deleteLi')
-  let saveUrl = sessionStorage.getItem('saveUrl')
   let postTitleContent = document.querySelector('#postForm .form-title-content')
   let postTitleContentH3 = document.querySelector(
     '#postForm .form-title-content h3'
