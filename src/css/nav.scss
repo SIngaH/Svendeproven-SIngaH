@@ -104,3 +104,14 @@
     font-size: 10px;
   }
 }
+@media only screen and (max-width: 340px) {
+  #drop-down {
+    font-size: 23px;
+  }
+  #nav .img-h4 #nav-logo {
+    height: 25px;
+  }
+  #nav .img-h4 {
+    width: 72%;
+  }
+}
