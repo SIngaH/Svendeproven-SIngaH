@@ -15,11 +15,9 @@ document.addEventListener('DOMContentLoaded', () => {
         result.length + ' dyr'
       result.forEach((dyr) => {
         let d = new Date(dyr.createdAt)
-        function days_passed(dt) {
+        function days_passed(previous) {
           let current = new Date()
-          let previous = new Date(dt.getTime())
-
-          return Math.ceil((current - previous + 1) / 86400000)
+          return Math.ceil((current - previous) / 86400000)
         }
 
         document.querySelector('#dyr-hos-os').innerHTML +=

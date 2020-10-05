@@ -15,10 +15,8 @@ document.addEventListener('DOMContentLoaded', () => {
     })
     .then(function (result) {
       let d = new Date(result.createdAt)
-      function days_passed(dt) {
+      function days_passed(previous) {
         let current = new Date()
-        let previous = new Date(dt.getTime())
-
         return Math.ceil((current - previous + 1) / 86400000)
       }
       main.innerHTML =
