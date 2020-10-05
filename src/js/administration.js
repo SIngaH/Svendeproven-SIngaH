@@ -22,9 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
     postLI[i].addEventListener('click', () => {
       sessionStorage.setItem('saveUrl', endpoints[i])
       sessionStorage.setItem('index', i)
-      deleteTitleContent.style.display = 'none'
-      deleteVolunteers.style.display = 'none'
-      deleteAnimals.style.display = 'none'
+      deleteForm.style.display = 'none'
       if (i == 0) {
         postTitleContent.style.display = 'flex'
         postTitleContentH3.innerHTML = `Ændre i Adopt sektionerne`
