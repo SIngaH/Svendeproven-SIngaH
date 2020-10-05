@@ -1,3 +1,9 @@
+let params = new URLSearchParams(document.location.search)
+let afmeld = params.get('afmeld')
+let headline = document.querySelector('.tilmeld_afmeld')
+if (afmeld == 'true') {
+  headline.innerHTML = `Her for neden kan du afmelde nyhedsbrevet`
+}
 let form = document.querySelector('.form')
 let errorElement = document.querySelector('.error-message')
 let name = document.querySelector('.form__name')

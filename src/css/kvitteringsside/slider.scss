@@ -3,34 +3,20 @@
   align-items: center;
   width: 100%;
   overflow-y: hidden;
-  height: 595px;
+  height: 596px;
   --n: 1;
   width: calc(var(--n) * 100%);
   transform: translate(calc(var(--i, 0) / var(--n) * -100% + var(--tx, 0px)));
   transition: transform 0.5s ease-out;
-  margin-top: 12%;
+  margin-bottom: 5%;
   img {
     min-width: 100%;
-    width: 100%;
+    width: auto;
     width: calc(100% / var(--n));
     pointer-events: none;
+    height: 100%;
   }
 }
 .smooth {
   transition: transform calc(var(--f, 1) * 0.5s) ease-out;
-}
-@media only screen and (max-width: 946px) {
-  #slider {
-    margin-top: 15%;
-  }
-}
-@media only screen and (max-width: 800px) {
-  #slider {
-    margin-top: 12%;
-  }
-}
-@media only screen and (max-width: 793px) {
-  #slider {
-    margin-top: 3%;
-  }
 }

@@ -8,7 +8,10 @@
         <%- include('../partials/nav') %>
         
         <main>
-            <h1>Tak for at tilmelde dig til vores nyhedsbrev!</h1>
+            <h1 class="tilmeld_afmeld">Tak for at tilmelde dig til vores nyhedsbrev!</h1>
+
+            <%- include('../partials/slider') %>
+
             <h2>For at afmelde nyhedsbrevet</h2>
             <form method="GET" class="form" novalidate>
                 <input name="name" class="form_input form__name" placeholder="Navn" />
@@ -28,4 +31,6 @@
 
     </div>
     <script src="./assets/js/fetch-kvitteringsside.js"></script>
+    <script src="./assets/js/fetch-slider.js"></script>
+    <script src="./assets/js/slider.js"></script>
 <%- include('../partials/last') %>
