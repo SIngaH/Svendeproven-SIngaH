@@ -1,20 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
   /* --------------------------------get token--------------------------------------- */
-  let tokenData = { username: 'admin', password: '1234' }
-  fetch('http://localhost:4000/auth/token', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(tokenData),
-  })
-    .then((response) => response.json())
-    .then((result) => {
-      sessionStorage.setItem('theToken', result.token)
+  let newToken = sessionStorage.getItem('newToken')
+  let tokenTime = new Date(newToken)
+  let current = new Date()
+
+  if (Math.ceil((current - tokenTime) / 86400000) <= 0) {
+    let tokenData = { username: 'admin', password: '1234' }
+    fetch('http://localhost:4000/auth/token', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(tokenData),
     })
-    .catch((error) => {
-      console.error('Error:', error)
-    })
+      .then((response) => response.json())
+      .then((result) => {
+        sessionStorage.setItem('theToken', result.token)
+        sessionStorage.setItem('newToken', new Date(result.validUntil))
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+      })
+  }
 
   let myToken = sessionStorage.getItem('theToken')
   let saveUrl = sessionStorage.getItem('saveUrl')
