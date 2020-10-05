@@ -24,15 +24,12 @@ document.addEventListener('DOMContentLoaded', () => {
         insertHere.style.gridTemplateColumns = '100%'
       }
       result.forEach((res, index) => {
-        let i = index + 1
         insertHere.innerHTML +=
           `
           <section>
-            <h3><a href="frivillig.html?number=` +
-          i +
-          `">` +
+            <h3>` +
           res.title +
-          `</a></h3>
+          `</h3>
             <img itemprop="image" src="` +
           res.asset.url +
           `" alt="volunteer" />
