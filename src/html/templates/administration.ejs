@@ -55,27 +55,11 @@
             </form>
         </section>
         <section id="deleteForm">
-            <form method="GET" class="form-title-content" novalidate>
+            <form method="GET" class="form-delete" novalidate>
                 <h3></h3>
-                <input name="text" class="form_input form__overskrift" placeholder="Overskrift">
-                <textarea name="comment" cols="30" rows="10" class="form_input form__comment" placeholder="Brødtekst"></textarea>
+                <input type="text" name="number" class="form_input form__number" placeholder="Hvilke sektion">
                 <div class="error-message"></div>
-                <input type="submit" value="Rediger" class="form__submit">
-            </form>
-            <form method="GET" class="form-volunteers" novalidate>
-                <h3></h3>
-                <input name="text" class="form_input form__overskrift" placeholder="Overskrift">
-                <textarea name="comment" cols="30" rows="10" class="form_input form__comment" placeholder="Brødtekst"></textarea>
-                <div class="error-message"></div>
-                <input type="submit" value="Rediger" class="form__submit">
-            </form>
-            <form method="GET" class="form-animals" novalidate>
-                <h3></h3>
-                <input name="text" class="form_input form__overskrift" placeholder="Overskrift">
-                <input type="text" name="number" class="form_input form__age" placeholder="Alder">
-                <textarea name="comment" cols="30" rows="10" class="form_input form__comment" placeholder="Brødtekst"></textarea>
-                <div class="error-message"></div>
-                <input type="submit" value="Rediger" class="form__submit">
+                <input type="submit" value="Delete" class="form__submit">
             </form>
         </section>
 
