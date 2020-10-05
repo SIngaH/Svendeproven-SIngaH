@@ -16,7 +16,8 @@
 
 ## Vudering af din egen indsats og gennemførsle af opgaveforløbet
 
-    Jeg syns svendeprøven gik meget godt, jeg nåede næsten alt.
+    Jeg syns svendeprøven gik meget godt, jeg nåede alt.
+    Hvis jeg havde haft mere tid vil jeg have gået over alt igen og måske ændre lidt i cssen.
     Jeg syns i hvert faldt at jeg gjorde det meget godt.
     Der var kun et par ting jeg havde problemer med.
     Jeg havde problemmer med administrationssiden.
