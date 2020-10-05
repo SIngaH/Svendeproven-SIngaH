@@ -300,7 +300,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch((error) => {
         console.error('Error:', error)
-        getToken(url, fetchData, 'post')
       })
   }
 
@@ -321,7 +320,6 @@ document.addEventListener('DOMContentLoaded', () => {
       })
       .catch((error) => {
         console.error('Error:', error)
-        getToken(url, number, 'delete')
       })
   }
 })
