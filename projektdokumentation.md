@@ -33,7 +33,7 @@
 
     I Dyr hos os sektionen skulle man gøre plads til at der kan komme flere dyr på listen, derfor lavede jeg det med grids. Jeg lavede grid rows til 10% auto, 10% for overskriften og auto som gør at der kan komme 100 til og den bliver ved med at lave plads til dem.
 
-    For min slider brugte jeg billederne fra adoptsections fordi de var de eneste billeder som vil passe godt til en slider, man kan lave slider med de andre billeder men det ville ikke være lige så flot. Grunden til at jeg har sat slideren på kvitteringssiden er fordi der ender man hvis man vil afmelde nyhedsbrevet og slideren motiverer derfor kunden til ikke at afmelde nyhedsbrevet.
+    For min slider brugte jeg billederne fra adoptsections fordi de var billeder som vil passe bedst til en slider. Grunden til at jeg har sat slideren på kvitteringssiden er fordi der ender man hvis man vil afmelde nyhedsbrevet og slideren motiverer derfor kunden til ikke at afmelde nyhedsbrevet.
 
 ---
 
