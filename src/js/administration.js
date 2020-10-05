@@ -1,27 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   /* --------------------------------get token--------------------------------------- */
-  function getToken(url, data, which) {
-    let tokenData = { username: 'admin', password: '1234' }
-    fetch('http://localhost:4000/auth/token', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(tokenData),
+  let tokenData = { username: 'admin', password: '1234' }
+  fetch('http://localhost:4000/auth/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(tokenData),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      sessionStorage.setItem('theToken', result.token)
     })
-      .then((response) => response.json())
-      .then((result) => {
-        sessionStorage.setItem('theToken', result.token)
-        if (which == 'post') {
-          post(url, data)
-        } else {
-          deleter(url, data)
-        }
-      })
-      .catch((error) => {
-        console.error('Error:', error)
-      })
-  }
+    .catch((error) => {
+      console.error('Error:', error)
+    })
 
   let myToken = sessionStorage.getItem('theToken')
   let saveUrl = sessionStorage.getItem('saveUrl')
