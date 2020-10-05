@@ -1,9 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
+  /* --------------------------------get token--------------------------------------- */
+  let tokenData = { username: 'admin', password: '1234' }
+  fetch('http://localhost:4000/auth/token', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(tokenData),
+  })
+    .then((response) => response.json())
+    .then((result) => {
+      sessionStorage.setItem('theToken', result.token)
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+    })
+
+  let myToken = sessionStorage.getItem('theToken')
   let postLI = document.querySelectorAll('.postLi')
   let deleteLI = document.querySelectorAll('.deleteLi')
   let saveUrl = sessionStorage.getItem('saveUrl')
-  let saveNumber = sessionStorage.getItem('saveNumber')
-  let currentIndex = sessionStorage.getItem('index')
   let postTitleContent = document.querySelector('#postForm .form-title-content')
   let postTitleContentH3 = document.querySelector(
     '#postForm .form-title-content h3'
@@ -267,15 +283,14 @@ document.addEventListener('DOMContentLoaded', () => {
     return false
   })
   /* ------------------- fetch post og delete ------------------------- */
+
   function post(url, fetchData) {
     fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
-        token:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxODg2OTAzLCJleHAiOjE2MDE4OTA1MDN9.iNbxsdQMtq5b5sq-KvToGYedNC1Cud1OsxXjZJgirKI',
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxODg2OTAzLCJleHAiOjE2MDE4OTA1MDN9.iNbxsdQMtq5b5sq-KvToGYedNC1Cud1OsxXjZJgirKI',
+        token: myToken,
+        Authorization: 'Bearer ' + myToken,
       },
       body: JSON.stringify(fetchData),
     })
@@ -293,10 +308,8 @@ document.addEventListener('DOMContentLoaded', () => {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
-        token:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxODg2OTAzLCJleHAiOjE2MDE4OTA1MDN9.iNbxsdQMtq5b5sq-KvToGYedNC1Cud1OsxXjZJgirKI',
-        Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxODg2OTAzLCJleHAiOjE2MDE4OTA1MDN9.iNbxsdQMtq5b5sq-KvToGYedNC1Cud1OsxXjZJgirKI',
+        token: myToken,
+        Authorization: 'Bearer ' + myToken,
         username: 'admin',
         password: '1234',
       },
