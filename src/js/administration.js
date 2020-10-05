@@ -257,14 +257,238 @@ document.addEventListener('DOMContentLoaded', () => {
     post(saveUrl, data)
     return false
   })
-  /* ------------------- fetch post og delete ------------------------- */
-  function post(url, data) {
-    console.log(url)
-    console.log(data)
-  }
 
-  function deleter(url, data) {
-    console.log(url)
+  /*---------------------form validering - delete-----------------------*/
+  /*---------------------title and content-----------------------*/
+
+  let DelerrorElement = document.querySelector(
+    '#deleteForm .form-title-content .error-message'
+  )
+  let Deloverskrift = document.querySelector(
+    '#deleteForm .form-title-content .form__overskrift'
+  )
+  let Deltextarea = document.querySelector(
+    '#deleteForm .form-title-content .form__comment'
+  )
+  deleteTitleContent.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    /*--------------------------overskrift--------------------------------- */
+    if (Deloverskrift.value === '' || Deloverskrift.value == null) {
+      DelerrorElement.style.display = 'block'
+      DelerrorElement.innerHTML = 'Der mangler en overskrift'
+      Deloverskrift.focus()
+      Deloverskrift.style.border = border
+      return false
+    } else {
+      Deloverskrift.style.border = borderGone
+    }
+
+    /*-----------------------textarea-------------------------------------*/
+    if (Deltextarea.value === '' || Deltextarea.value == null) {
+      DelerrorElement.style.display = 'block'
+      DelerrorElement.innerHTML = 'Der mangler brødtext'
+      Deltextarea.focus()
+      Deltextarea.style.border = border
+      return false
+    } else {
+      Deltextarea.style.border = borderGone
+    }
+
+    DelerrorElement.style.display = 'block'
+
+    if (deleteTitleContentH3.innerText.includes('Adopt')) {
+      DelerrorElement.innerHTML = 'Du har nu fjernet fra Adopt sektionerne'
+    } else if (deleteTitleContentH3.innerText.includes('Abouts')) {
+      DelerrorElement.innerHTML = 'Du har nu fjernet fra Abouts sektionerne'
+    }
+
+    let data = {
+      title: Deloverskrift.value,
+      content: Deltextarea.value,
+    }
+
+    deleter(saveUrl, data)
+    return false
+  })
+  /*---------------------volunteers-----------------------*/
+  let Deltitle = document.querySelector(
+    '#deleteForm .form-volunteers .form__overskrift'
+  )
+  let Delcontent = document.querySelector(
+    '#deleteForm .form-volunteers .form__comment'
+  )
+  let Delerror = document.querySelector(
+    '#deleteForm .form-volunteers .error-message'
+  )
+  deleteVolunteers.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    /*--------------------------overskrift--------------------------------- */
+    if (Deltitle.value === '' || Deltitle.value == null) {
+      Delerror.style.display = 'block'
+      Delerror.innerHTML = 'Der mangler en overskrift'
+      Deltitle.focus()
+      Deltitle.style.border = border
+      return false
+    } else {
+      Deltitle.style.border = borderGone
+    }
+
+    /*-----------------------textarea-------------------------------------*/
+    if (Delcontent.value === '' || Delcontent.value == null) {
+      Delerror.style.display = 'block'
+      Delerror.innerHTML = 'Der mangler brødtext'
+      Delcontent.focus()
+      Delcontent.style.border = border
+      return false
+    } else {
+      Delcontent.style.border = borderGone
+    }
+
+    Delerror.style.display = 'block'
+    Delerror.innerHTML = 'Du har nu fjernet fra Volunteers sektionerne'
+
+    let theIndex = currentIndex++
+    let data = {
+      title: Deltitle.value,
+      content: Delcontent.value,
+      extra: null,
+      AssetId: theIndex,
+    }
     console.log(data)
+
+    deleter(saveUrl, data)
+    return false
+  })
+
+  /*---------------------animals-----------------------*/
+  let Antitle = document.querySelector('.form-animals .form__overskrift')
+  let Ancontent = document.querySelector('.form-animals .form__comment')
+  let Aage = document.querySelector('.form-animals .form__age')
+  let AnerrorElement = document.querySelector('.form-animals .error-message')
+
+  postAnimals.addEventListener('submit', (e) => {
+    e.preventDefault()
+
+    /*--------------------------overskrift--------------------------------- */
+    if (Antitle.value === '' || Antitle.value == null) {
+      AnerrorElement.style.display = 'block'
+      AnerrorElement.innerHTML = 'Der mangler en overskrift'
+      Antitle.focus()
+      Antitle.style.border = border
+      return false
+    } else {
+      Antitle.style.border = borderGone
+    }
+
+    /*--------------------------Age--------------------------------- */
+    if (Aage.value === '' || Aage.value == null) {
+      AnerrorElement.style.display = 'block'
+      AnerrorElement.innerHTML = 'Der mangler en alder'
+      Aage.focus()
+      Aage.style.border = border
+      return false
+    } else {
+      Aage.style.border = borderGone
+    }
+    if (isNaN(Aage.value)) {
+      AnerrorElement.style.display = 'block'
+      AnerrorElement.innerHTML = 'Alderen skal skrives i tal'
+      Aage.focus()
+      Aage.style.border = border
+      return false
+    } else {
+      Aage.style.border = borderGone
+    }
+
+    /*-----------------------textarea-------------------------------------*/
+    if (Ancontent.value === '' || Ancontent.value == null) {
+      AnerrorElement.style.display = 'block'
+      AnerrorElement.innerHTML = 'Der mangler brødtext'
+      Ancontent.focus()
+      Ancontent.style.border = border
+      return false
+    } else {
+      Ancontent.style.border = borderGone
+    }
+
+    AnerrorElement.style.display = 'block'
+    AnerrorElement.innerHTML = 'Du har nu tilføjet til Animals sektionerne'
+
+    let theIndex = currentIndex++
+    let data = {
+      title: Antitle.value,
+      content: Ancontent.value,
+      age: Aage.value,
+      extra: null,
+      AssetId: theIndex,
+    }
+
+    post(saveUrl, data)
+    return false
+  })
+  /* ------------------- fetch post og delete ------------------------- */
+  // let test = { name: 'hannah', email: 'hjkl@jkl.ckl' }
+  // post('http://localhost:4000/api/v1/subscribers', test)
+  function post(url, fetchData) {
+    fetch(url, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        token:
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxMzc1MDg1LCJleHAiOjE2MDEzNzg2ODV9.54PkfDXdSo4pM5LV72c0gaHjL81rnFV4jvvPcEbPIjE',
+        Authorization:
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkdXlKQjU5OHpqQ0VpQno2cUY0UDlLLlhrUGRESXd5ajJjd1FXU1lRczNIbHY1TUZsbUxJTlciLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE4OjE5OjM5LjE2OVoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE4OjE5OjM5LjE2OVoifSwiaWF0IjoxNTg5NzQzNDI4LCJleHAiOjE1ODk3NDcwMjh9.RQlQN6Aj8Ypvso2B81fPLfGZ9Vj9YelqHLT9KKGFxqE',
+      },
+      body: JSON.stringify(fetchData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Success:', data)
+      })
+      .catch((error) => {
+        console.error('Error:', error)
+      })
+  }
+  // let testData = { name: 'hannah', email: 'hjkl@jkl.ckl' }
+  // deleter('http://localhost:4000/api/v1/subscribers/', testData)
+  function deleter(url, testData) {
+    let thisEmail = testData.email
+    if (thisEmail == null) {
+      fetch(url, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxMzc1MDg1LCJleHAiOjE2MDEzNzg2ODV9.54PkfDXdSo4pM5LV72c0gaHjL81rnFV4jvvPcEbPIjE',
+        },
+        body: JSON.stringify(testData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Success:', data)
+        })
+        .catch((error) => {
+          console.error('Error:', error)
+        })
+    } else {
+      fetch(url + thisEmail, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded',
+          token:
+            'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxMzc1MDg1LCJleHAiOjE2MDEzNzg2ODV9.54PkfDXdSo4pM5LV72c0gaHjL81rnFV4jvvPcEbPIjE',
+        },
+        body: JSON.stringify(testData),
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          console.log('Success:', data)
+        })
+        .catch((error) => {
+          console.error('Error:', error)
+        })
+    }
   }
 })
