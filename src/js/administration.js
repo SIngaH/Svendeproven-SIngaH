@@ -113,11 +113,9 @@ document.addEventListener('DOMContentLoaded', () => {
       errorElement.innerHTML = 'Du har nu tilføjet til Abouts sektionerne'
     }
 
-    let theIndex = currentIndex++
     let data = {
       title: overskrift.value,
       content: textarea.value,
-      AssetId: theIndex,
     }
 
     post(saveUrl, data)
@@ -156,12 +154,10 @@ document.addEventListener('DOMContentLoaded', () => {
     VerrorElement.style.display = 'block'
     VerrorElement.innerHTML = 'Du har nu tilføjet til Volunteers sektionerne'
 
-    let theIndex = currentIndex++
     let data = {
       title: title.value,
       content: content.value,
       extra: null,
-      AssetId: theIndex,
     }
 
     post(saveUrl, data)
@@ -222,13 +218,11 @@ document.addEventListener('DOMContentLoaded', () => {
     AerrorElement.style.display = 'block'
     AerrorElement.innerHTML = 'Du har nu tilføjet til Animals sektionerne'
 
-    let theIndex = currentIndex++
     let data = {
       title: Atitle.value,
       content: Acontent.value,
       age: age.value,
       extra: null,
-      AssetId: theIndex,
     }
 
     post(saveUrl, data)
@@ -274,16 +268,18 @@ document.addEventListener('DOMContentLoaded', () => {
     return false
   })
   /* ------------------- fetch post og delete ------------------------- */
-
   function post(url, fetchData) {
+    console.log(url)
+    console.log(fetchData)
+
     fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
         token:
-          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxODgyNjI0LCJleHAiOjE2MDE4ODYyMjR9.G1eHRaOqh2373tWPfuCvSLKNOFdv3kMbDhrrJdQmAuo',
+          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxODg2OTAzLCJleHAiOjE2MDE4OTA1MDN9.iNbxsdQMtq5b5sq-KvToGYedNC1Cud1OsxXjZJgirKI',
         Authorization:
-          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxODgyNjI0LCJleHAiOjE2MDE4ODYyMjR9.G1eHRaOqh2373tWPfuCvSLKNOFdv3kMbDhrrJdQmAuo',
+          'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjp7ImlkIjoxLCJ1c2VybmFtZSI6ImFkbWluIiwicGFzc3dvcmQiOiIkMmEkMTUkQy9QMmVlZnpJbFguRTJ2VXFqb0JLZU05dGg2djc5NkpDbzBKQnN5cmtJd090NXJ4WUEuVnEiLCJjcmVhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoiLCJ1cGRhdGVkQXQiOiIyMDIwLTA1LTE3VDE5OjI1OjM0LjQwNFoifSwiaWF0IjoxNjAxODg2OTAzLCJleHAiOjE2MDE4OTA1MDN9.iNbxsdQMtq5b5sq-KvToGYedNC1Cud1OsxXjZJgirKI',
       },
       body: JSON.stringify(fetchData),
     })
