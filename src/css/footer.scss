@@ -4,6 +4,7 @@
   display: grid;
   grid-template-columns: repeat(3, 33%);
   grid-template-rows: 100%;
+  margin-top: 14%;
   .copyright {
     place-self: end center;
   }
@@ -25,6 +26,21 @@
 @media only screen and (max-width: 1270px) {
   #footer {
     padding: 2% 3%;
+  }
+}
+@media only screen and (max-width: 946px) {
+  #footer {
+    margin-top: 15%;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #footer {
+    margin-top: 12%;
+  }
+}
+@media only screen and (max-width: 793px) {
+  #footer {
+    margin-top: 3%;
   }
 }
 @media only screen and (max-width: 675px) {
